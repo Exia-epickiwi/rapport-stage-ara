@@ -1,0 +1,42 @@
+\documentclass{Article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
+
+\author{Baptiste \bsc{Saclier}}
+\title{Rapport d'activité de stage dans l'entreprise ARA}
+\date{10 mai 2017}
+
+\begin{document}
+
+\maketitle
+
+\section{Présentation de l'entreprise}
+
+L'entreprise ARA est une société de service lyonnaise originellement spécialisée dans la mise en place de réseaux et d'integration d'ERP. Elle dispose d'un effectif 27 personnes dont 6 administrateurs réseaux et 18 experts ERP.
+
+\section{Présentation du stage}
+
+Le stage que j'effectue dans cette entreprise a débuté le 24 avril et se terminera le 30 juin 2017. Durant ce stage, plusieurs missions m'ont été confiées dans divers domaines.
+
+\subsection{Mise en place d'un environnement de développement}
+
+Le premier problème qui m'a été posé est l'environnement de développement des développeurs de l'entreprise. Pour tester leur code, les développeurs envoient leur code sur un serveur commun à tous les employés permettant ainsi de tester l'environnement en conditions réel. Ce système fonctionne bien, mais pose des problèmes lors de la mise en place de projets d'équipe ou chacun des développeurs doit attendre son tour avant de tester son code. Il en résulte une perte de temps importante lors de gros changement. De plus, le site sur lequel travaille actuellement l'entreprise n'est pas compatible avec les systèmes Windows présents sur chacun des ordinateurs de développement.
+
+Mon premier objectif a été donc de proposer un système individuel par développeur permettant de travailler de manière isolée sur un serveur Linux proche de l'environnement de production.
+
+Pendant la première semaine de mon stage, j'ai donc travaillé sur un système basé sur Docker couplé à de nombreux scripts permettant ainsi de mettre en place un serveur en PHP 5.6, MySQL 5.6 et CentOS 6.8. Ce système peut être utilisé simplement par un développeur pour mettre en place un serveur Linux contenant le code qui'il est en train de produire.
+
+\subsection{Ajout de fonctionnalités à un site de e-commerce}
+
+Le deuxième objectif de mon stage est d'ajouter des fonctionnalités à un site Web de E-Commerce présent chez un client. Ce site est basé sur Magento et connecté à un ERP au travers d'un logiciel développé par ARA. Magento est un système de gestion de site de e-commerce bénéficiant de larges possibilités en matière de personnalisation.
+
+Mon objectif est d'ajouter ces nouvelles fonctionnalités demandées par le client sur le site Magento existant.
+
+\section{Bilan}
+
+Ce stage est une très bonne expérience dans une PME, ce qui contraste avec le stage de début d'année effectué chez Nokia. De plus, ce stage me donne l'occasion de travailler sur un projet en cours et donc avec une structure qui m'est inconnue. Enfin, c'est une opportunité d'apprendre à maitriser un système comme Magento de gestion de boutique en ligne, un domaine que je ne connais pas.
+
+\end{document}
