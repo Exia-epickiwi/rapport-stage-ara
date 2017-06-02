@@ -75,9 +75,35 @@ dédié à mon travail.
 
 	Avant la mise en place de l'environnement docker par le biais de cette mission les développeurs utilisant les technologies du projet Aello ne pouvaient pas tester sur leur machine due a une incompatibilité entre Magento et Windows. Ainsi, tout les tests étaient effectué sur une machine dite "Sandbox" commune à tout les membres de l'équipe. Cela ne pose pas de gros problèmes avec une équipe de 2 personnes mais le temps de développement peut être allongé inutilement avec une équipe plus importante. En effet, si les changements d'un développeur rendent l'application "Sandbox" instable, tout les développeurs qui testent leur code sur cette application au même moment sont impactés par cette instabilité et donc bloqués jusqu’à la correction de l’erreur.
 
-	\subsection{Image mise en place}
+	Pour rendre le développement plus agréable il fut décider que chaque développeur aurais un copie locale du site et effectuerais ses modifications sur cette copie locale a l'aide d'une machine virtuelle ou d'un container Docker.
+
+	\subsection{Docker} 
+
+	Docker est un solution initialement développée pour Linux. Il utilise LXC qui permet la mise en place de containers isolés présentant un environnement complet composé d'un système d'exploitation et de diverses applications. Docker permet, en plus de LXC un simplicité de déploiement de ces containers au travers d'une gestion d'images.
+
+	Sur docker, une image est créer a l'aide d'un fichier (le Dockerfile) contenant toutes les instructions permettant la construction de l'image. Ces instruction décrivent étapes par étapes la construction du futur container par une suite de commandes qui sont exécutes dans le contexte de l'image. A la fin de la construction, l'image est sauvegardée pour servir de base à un futur container. Quand l'imagée est construite, il est alors possible de créer un nombre indéfinis de containers simultanés se basant sur l'image produite précédemment. Des qu'un container est supprimé, tout son contenu l'est aussi permettant de reprendre le développement sur une base seine dans le cas de grosses erreurs.
+
+	Pour palier a cet aspect éphémère des données, Docker permet de monter un dossier provenant de l'ordinateur hôte (l'ordinateur de développement) dans le container et ainsi de partager les données et plus particulièrement le code du développeur éditer sur sa propre machine et non dans le container. Ainsi il est possible de mettre en place n'importe quel système et de proposer un environnement de développement sécurisé et isolé des autres réseaux permettant d'expérimenter sans crainte d’endommager le système dans son intégralité.
+
+	Depuis Windows 10, une version de docker est disponible nativement sur les machines Windows permettant de disposer de machines Linux au sein même du système de Microsoft.
+
+	\subsection{Prérequis et image crée}
+
+	L'objectif d'une image docker est de disposer d'un système tout intégré au plus proche de la configuration de la future production. Ainsi après analyse de l'environnement de production d'Aello on obtiens les prérequis suivants :
+
+	\begin{itemize}
+		\item CentOS 6.8
+		\item Apache 2
+		\item PHP 5.6
+		\item MySQL 5.6
+		\item Composer
+	\end{itemize}
+
+	Il est aussi nécessaire n'initialiser la base de données avec un fichier SQL issus de la base de données du serveur de test permettant de ne pas se soucier de l'installation de Magento mais de prendre le projet en l’état avec toutes les données accumulés et disponible pour les tests.
+	
 	\subsection{Scripts de gestion}
 		\subsubsection{NinjaSync}
+	\subsection{Limites et améliorations}
 	\subsection{Conclusion}
 \section{Projet Aello}
 	\subsection{Technologies utilisés}
